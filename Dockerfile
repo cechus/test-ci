@@ -10,6 +10,8 @@ CMD ["yarn", "start", "--host=0.0.0.0", "--port=3000"]
 
 FROM dev AS builder
 LABEL stage="intermediate"
+RUN echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+RUN env
 RUN yarn build
 
 # Stage 2 - the production environment
