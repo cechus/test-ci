@@ -58,9 +58,8 @@ jobs:
       - name: Build Docker images
         env:
           REACT_APP_TEST_ALGO: ${{ secrets.REACT_APP_TEST_ALGO}}
-        run:
-          echo "====================" 
-          echo $REACT_APP_TEST_ALGO
+        run: 
+          env
           docker build . --rm -t ghcr.io/cechus/test-ci/dev-web:latest
       - name: Push Docker images to registry
         run: |
