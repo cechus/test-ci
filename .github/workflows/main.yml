@@ -55,11 +55,22 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+      - name: create env file
+        run: |
+            echo REACT_APP_TEST_ALGO =${{ secrets.REACT_APP_TEST_ALGO }} >> .env
       - name: Build Docker images
         env:
           REACT_APP_TEST_ALGO: ${{ secrets.REACT_APP_TEST_ALGO}}
-        run: |
+        run: /
           docker build . --rm -t ghcr.io/cechus/test-ci/dev-web:latest
       - name: Push Docker images to registry
-        run: |
+        run: /
           docker push ghcr.io/cechus/test-ci/dev-web:latest
