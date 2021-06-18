@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const test = process.env.TEST_ALGO || 'no hay env :(';
+  const test = process.env.REACT_APP_TEST_ALGO || 'no hay env :(';
 
   return (
     <div className="App">
