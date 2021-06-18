@@ -39,7 +39,7 @@ jobs:
           path: build/
 
   github-package:
-    environment: algo
+    environment: otro_algo
     needs: build
     runs-on: ubuntu-latest
     steps:
